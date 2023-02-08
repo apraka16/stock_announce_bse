@@ -19,5 +19,6 @@ from django.urls import path, include
 urlpatterns = [
     path('api/', include('api.urls')),
     path('api/stocks/', include('stocks.urls')),
+    path('api/v2/', include('bse_stock_announcements.routers')), # Using Viewsets
     path('admin/', admin.site.urls),
 ]

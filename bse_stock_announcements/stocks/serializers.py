@@ -5,11 +5,12 @@ class StockSerializer(serializers.ModelSerializer):
     class Meta:
         model = Stock
         fields = [
+            'pk',
             'scrip_id',
             'scrip_long_name',
         ]
 
-class AnnouncementSerializer(serializers.ModelSerializer):
+class AnnouncementSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Announcement
         fields = [

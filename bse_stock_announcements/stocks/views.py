@@ -1,4 +1,6 @@
-from rest_framework import generics
+from rest_framework import generics, viewsets
+from rest_framework.response import Response
+
 from .models import Stock, Announcement
 from .serializers import StockSerializer, AnnouncementSerializer
 
@@ -15,3 +17,7 @@ class StockAnnouncementListAPIView(generics.ListAPIView):
     serializer_class = AnnouncementSerializer
 
 stock_announcement_list_view = StockAnnouncementListAPIView.as_view()
+
+class StockViewSet(viewsets.ModelViewSet):
+    queryset = Stock.objects.all()
+    serializer_class = StockSerializer
